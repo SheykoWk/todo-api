@@ -7,8 +7,13 @@ const taskControllers = require('./tasks.controllers')
 //* taskControllers.findTodoById()
 
 const getAllTodos = (req, res) => {
-    const data = taskControllers.findAllTodos()
-    res.status(200).json(data)
+    taskControllers.findAllTodos()
+        .then((data) => {
+            res.status(200).json(data)
+        })
+        .catch((err) => {
+            res.status(400).json({message: err.message})
+        })
 }
 
 const getTodoById = (req, res) => {
