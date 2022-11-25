@@ -39,9 +39,30 @@ const createTodo = async (obj) => {
     return newTodo
 }
 
+
+
+const updateTodo = async (id, obj) => {
+    const data = await Tasks.update(obj, {
+        where: {
+            id: id
+        }
+    })
+    return data[0] //? Retorna un arreglo, este arreglo puede lucir de estas 2 maneras [1], [0]
+}
+
+const deleteTodo = async (id) => {
+    const data = await Tasks.destroy({
+        where: {
+            id: id
+        }
+    })
+    return data //? Retorna 1 en caso de que se haya eliminado, o 0 en caso de que el id no exista
+}
+
 module.exports = {
     findAllTodos,
     findTodoById, 
-    createTodo
+    createTodo,
+    updateTodo
 }
 
