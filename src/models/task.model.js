@@ -16,17 +16,17 @@ const Tasks = db.define('tasks', {
         primaryKey: true
     },
     title: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: DataTypes.STRING, //? es un varchar (tiene 255 de limitante)
+        allowNull: false, //? Es un campo obligatorio
         unique: true
     },
     description: {
-        type: DataTypes.TEXT,
+        type: DataTypes.TEXT,//? no tiene limite
         allowNull: false
     },
     is_completed: {
         type: DataTypes.BOOLEAN,
-        defaultValue: false
+        defaultValue: false 
     }
 }, {
     timestamps: false
