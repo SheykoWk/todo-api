@@ -16,7 +16,7 @@ const getAllTodos = (req, res) => {
         })
 }
 
-// const getAllTodosWithTryCatch = (req, res) => {
+// const getAllTodos = (req, res) => {
 //     try {
 //         const data = taskControllers.findAllTodos()
 //         res.status(200).json(data)
